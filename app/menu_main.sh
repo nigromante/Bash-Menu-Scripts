@@ -4,15 +4,16 @@ function menu_main() {
 
     title "Menu Principal"
 
-    local items=("Sistema" "Info" "Scripts"  "Colors")
+    local items=("Sistema" "MPlayer" "Info" "Scripts"  "Colors")
 
     select item in "${items[@]}" Salir
     do
         case $REPLY in
-            1) header ; menu_system ;;
-            2) call "info" ;;
-            3) call "list" ;;
-            4) call "colors" ;;
+            1) menu_system ;;
+            2) menu_mplayer ;;
+            3) call "info" ;;
+            4) call "list" ;;
+            5) call "colors" ;;
             $((${#items[@]}+1))) 
                 header
                 return;;

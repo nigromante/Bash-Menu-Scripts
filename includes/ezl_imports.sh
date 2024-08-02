@@ -10,5 +10,6 @@ source app/layout.sh
 source app/menu_system.sh
 source app/menu_main.sh
 source app/menu_admin.sh
+source app/menu_mplayer.sh
 
 
