@@ -11,11 +11,11 @@ function menu_mplayer() {
     do
         case $REPLY in
             1) call "mplayer/list" ;; 
-            2) call "mplayer/video" "video0" ;; 
-            3) call "mplayer/video" "video1" ;; 
-            4) call "mplayer/video" "video2" ;; 
-            5) call "mplayer/video" "video3" ;; 
-            6) call "mplayer/video" "video4" ;; 
+            2) call "mplayer/play" "video0" ;; 
+            3) call "mplayer/play" "video1" ;; 
+            4) call "mplayer/play" "video2" ;; 
+            5) call "mplayer/play" "video3" ;; 
+            6) call "mplayer/play" "video4" ;; 
             $((${#items[@]}+1))) 
                 header
                 return ;;
