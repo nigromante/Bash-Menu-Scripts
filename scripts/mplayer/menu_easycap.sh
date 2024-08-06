@@ -6,16 +6,12 @@ function menu_easycap() {
 
     print "${BR}${INFO}\tMPlayer Easycap${RESET}${BR}"
 
-    data=$(v4l2-ctl --list-devices | grep "/dev" | grep -v "/media" | awk '{printf "%s",$0} END {print ""}' )
+    devices=() ; read -a devices <<< $(mplayer_devices)
 
-    itemsx=()
-    read -a itemsx <<< "$data"
-
-
-    select item in "${itemsx[@]}" Cancelar
+    select item in "${devices[@]}" Cancelar
     do
         case $REPLY in
-            $((${#itemsx[@]}+1))) 
+            $((${#devices[@]}+1))) 
                 return ;;
             *)
                 call "mplayer/play_easycap" "$item"

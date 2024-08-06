@@ -1,7 +1,12 @@
 #!/bin/bash
 source ../includes/ezl_imports_scripts.sh
 
-LIST=$(v4l2-ctl --list-devices | grep "/dev" | grep -v "/media")
+devices=() ; read -a devices <<< $(mplayer_devices)
 
-print "${BR}${INFO}\tDispositivos detectados${RESET}${BR}"
-print "${WARNING}${LIST}${RESET}${BRx2}"
+print "${BR}${INFO}\tDispositivos detectados${BR}"
+for device in "${devices[@]}" 
+do 
+    print "${TAB}${WARNING}${device}" 
+done
+print "${RESET}${BRx2}" 
+

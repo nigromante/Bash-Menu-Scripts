@@ -6,16 +6,13 @@ function menu_webcam() {
 
     print "${BR}${INFO}\tMPlayer Webcam${RESET}${BR}"
 
-    data=$(v4l2-ctl --list-devices | grep "/dev" | grep -v "/media" | awk '{printf "%s",$0} END {print ""}' )
-
-    itemsx=()
-    read -a itemsx <<< "$data"
+    devices=() ; read -a devices <<< $(mplayer_devices)
 
 
-    select item in "${itemsx[@]}" Cancelar
+    select item in "${devices[@]}" Cancelar
     do
         case $REPLY in
-            $((${#itemsx[@]}+1))) 
+            $((${#devices[@]}+1))) 
                 return ;;
             *)
                 call "mplayer/play_webcam" "$item"

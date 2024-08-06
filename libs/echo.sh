@@ -6,6 +6,9 @@ WARNING=${YELLOW}
 INFO=${PURPLE}
 BLANK=${RESET}
 
+TAB=$'\t'
+
+
 BR=$'\n'
 BRx2=$'\n\n'
 BRx3=$'\n\n\n'
