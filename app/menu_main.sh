@@ -4,7 +4,7 @@ function menu_main() {
 
     title "Menu Principal"
 
-    local items=("Sistema" "MPlayer" "Info" "Scripts"  "Colors")
+    local items=("Sistema" "MPlayer" "Info" "Scripts"  "Colors" "Choice")
 
     select item in "${items[@]}" Salir
     do
@@ -14,6 +14,7 @@ function menu_main() {
             3) call "info" ;;
             4) call "list" ;;
             5) call "colors" ;;
+            6) call "choice" ;;
             $((${#items[@]}+1))) 
                 header
                 return;;

@@ -7,15 +7,8 @@ function menu_easycap() {
     print "${BR}${INFO}\tMPlayer Easycap${RESET}${BR}"
 
     read -a devices <<< "$(mplayer_devices)"
+    getChoice -q "seleccionar" -o devices -v "opcion" -t "opcionText"
 
-    select item in "${devices[@]}" Cancelar
-    do
-        case $REPLY in
-            $((${#devices[@]}+1))) 
-                return ;;
-            *)
-                call "mplayer/play_easycap" "$item"
-        esac
-    done   
+    call "mplayer/play_easycap" "$opcionText"
 
 }
