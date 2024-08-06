@@ -7,6 +7,9 @@ INFO=${PURPLE}
 BLANK=${RESET}
 
 TAB=$'\t'
+TABx2=$'\t\t'
+TABx3=$'\t\t\t'
+TABx4=$'\t\t\t\t'
 
 
 BR=$'\n'

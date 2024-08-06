@@ -6,8 +6,7 @@ function menu_webcam() {
 
     print "${BR}${INFO}\tMPlayer Webcam${RESET}${BR}"
 
-    devices=() ; read -a devices <<< $(mplayer_devices)
-
+    read -a devices <<< "$(mplayer_devices)"
 
     select item in "${devices[@]}" Cancelar
     do

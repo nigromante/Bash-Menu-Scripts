@@ -6,7 +6,7 @@ function menu_easycap() {
 
     print "${BR}${INFO}\tMPlayer Easycap${RESET}${BR}"
 
-    devices=() ; read -a devices <<< $(mplayer_devices)
+    read -a devices <<< "$(mplayer_devices)"
 
     select item in "${devices[@]}" Cancelar
     do
