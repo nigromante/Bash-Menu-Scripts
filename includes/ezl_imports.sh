@@ -12,4 +12,7 @@ source app/menu_main.sh
 source app/menu_admin.sh
 source app/menu_mplayer.sh
 
+source scripts/mplayer/menu_webcam.sh
+source scripts/mplayer/menu_easycap.sh
+
 

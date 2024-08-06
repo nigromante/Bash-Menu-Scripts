@@ -5,18 +5,14 @@ function menu_mplayer() {
 
     title "Menu Mplayer"
     
-    local items=("Lista Dispositivos" "Video 0" "Video 1" "Video 2" "Video 3" "Video 4" "easycap" )
+    local items=("Lista Dispositivos" "Webcam" "Easycap" )
 
     select item in "${items[@]}" Volver
     do
         case $REPLY in
             1) call "mplayer/list" ;; 
-            2) call "mplayer/play" "video0" ;; 
-            3) call "mplayer/play" "video1" ;; 
-            4) call "mplayer/play" "video2" ;; 
-            5) call "mplayer/play" "video3" ;; 
-            6) call "mplayer/play" "video4" ;; 
-            7) call "mplayer/easycap" "video5" ;; 
+            2) menu_webcam ;; 
+            3) menu_easycap ;; 
             $((${#items[@]}+1))) 
                 header
                 return ;;
