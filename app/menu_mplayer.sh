@@ -5,7 +5,7 @@ function menu_mplayer() {
 
     title "Menu Mplayer"
     
-    local items=("Lista Dispositivos" "Video 0" "Video 1" "Video 2" "Video 3" "Video 4" )
+    local items=("Lista Dispositivos" "Video 0" "Video 1" "Video 2" "Video 3" "Video 4" "easycap" )
 
     select item in "${items[@]}" Volver
     do
@@ -16,6 +16,7 @@ function menu_mplayer() {
             4) call "mplayer/play" "video2" ;; 
             5) call "mplayer/play" "video3" ;; 
             6) call "mplayer/play" "video4" ;; 
+            7) call "mplayer/easycap" "video5" ;; 
             $((${#items[@]}+1))) 
                 header
                 return ;;
