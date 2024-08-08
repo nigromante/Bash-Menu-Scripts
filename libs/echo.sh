@@ -59,3 +59,17 @@ function echo_tests() {
 }
 
 
+function _hideCursor() {
+  printf "\033[?25l"
+  trap 'print "${BR}${ERROR} Break ! ${RESET}${BRx2}"  && showCursor && exit "0"'  SIGINT
+}
+
+function _showCursor() {
+  printf "\033[?25h"
+  trap - SIGINT
+}
+
+function _clearLastMenu() {
+  echo -en "\033[${1}A"
+  tput ed
+}

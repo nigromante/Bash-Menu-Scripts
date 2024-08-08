@@ -6,6 +6,8 @@ source libs/call.sh
 source libs/functions.sh
 source libs/mplayer.sh
 source libs/getchoice.sh
+source libs/keymanager.sh
+source libs/menu.sh
 
 
 source app/layout.sh

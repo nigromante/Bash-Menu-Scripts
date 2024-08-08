@@ -4,7 +4,7 @@ CHAR__GREEN='\033[0;32m'
 CHAR__RED='\033[0;31m'
 CHAR__RESET='\033[0m'
 menuStr=""
-returnOrExit=""
+returnOrExit="exit"
 
 function hideCursor {
   printf "\033[?25l"
