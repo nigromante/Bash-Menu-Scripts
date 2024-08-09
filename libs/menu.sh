@@ -30,16 +30,19 @@ menu_K_DOWN() {
 }
 
 menu_K_QUIT() {
-    print "${ERROR}${BR}${TAB}Salida ...${BR}"
+    # print "${ERROR}${BR}${TAB}Salida ...${BR}"
     printf -v "${1}" ""
 }
 
 menu_K_ENTER() {
-    print "${SUCCESS}${BR}${TAB}Seleccion lista ...${BR}"
+    # print "${SUCCESS}${BR}${TAB}Seleccion lista ...${BR}"
     printf -v "${1}" "${menuItems[selectedIndex]}"
 }
 
 _menu() {
+
+    printf -v "itemsLength" "${#menuItems[@]}"
+    selectedIndex=0
 
     _hideCursor
 
@@ -61,6 +64,5 @@ _menu() {
 
 _menu_init() {
     read -a menuItems <<< "$1" 
-    printf -v "itemsLength" "${#menuItems[@]}"
 }
 
