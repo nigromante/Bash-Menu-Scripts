@@ -44,7 +44,7 @@ _menu() {
     printf -v "itemsLength" "${#menuItems[@]}"
     selectedIndex=0
 
-    _hideCursor
+    trap_hideCursor
 
     menu_render
 
@@ -59,7 +59,7 @@ _menu() {
         esac
     done
 
-    _showCursor
+    trap_showCursor
 }
 
 _menu_init() {
