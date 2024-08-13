@@ -43,12 +43,12 @@ function cursor_show() {
 
 
 function trap_hideCursor() {
-  cursor_hide()
+  cursor_hide
   trap 'print "${BR}${ERROR} Break ! ${RESET}${BRx2}"  && trap_showCursor && exit "0"'  SIGINT
 }
 
 function trap_showCursor() {
-  cursor_show()
+  cursor_show
   trap - SIGINT
 }
 
