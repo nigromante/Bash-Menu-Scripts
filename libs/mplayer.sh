@@ -6,7 +6,8 @@ function mplayer_devices() {
 }
 
 function mplayer_play_webcam() {
-    mplayer tv:// -tv driver=v4l2:width=640:height=360:device=$1:fps=60:outfmt=yuy2  -msglevel all=-1  
+    # mplayer tv:// -tv driver=v4l2:width=640:height=360:device=$1:fps=60:outfmt=yuy2  -msglevel all=-1  
+    mplayer tv:// -tv driver=v4l2:width=720:height=480:device=$1:fps=30:outfmt=yuy2  -msglevel all=-1  
 }
 
 function mplayer_play_easycap() {
